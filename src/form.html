@@ -9,68 +9,83 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Пройди опрос</title>
-</head>
-<body>
-<div class="form-wrap">
-    <div class="form-wrap">
-        <div class="profile"><img src="https://www.survio.com/ru/blog/wp-content/uploads/2017/03/logo-do-cta.png" width="200" height="200">
-            <h1>Опрос</h1>
-        </div>
-        <form method="post" action="form.php">
-            <div>
-                <label for="name">Имя</label>
-                <input type="text" name="name" required>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Пройди опрос</title>
+    </head>
+    <body>
+        <div class="form-wrap">
+            <div class="profile">
+                <img src="https://www.survio.com/ru/blog/wp-content/uploads/2017/03/logo-do-cta.png" width="200" height="200">
+                <h1>Опрос</h1>
             </div>
-        <div class="radio">
-            <span>Пол</span>
-            <div class="radio">
-                <input id="radio-1" type="radio" name="radio" value="1" checked>
-                <label for="radio-1">Мужской</label>
-            </div>
-            <div class="radio">
-                <input id="radio-2" type="radio" name="radio" value="2">
-                <label for="radio-2">Женский</label>
-            </div>
+            <form method="post" action="form.php">
+                <div>
+                    <label for="firstname">Имя *</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
+                <div class="radio">
+                    <span>Пол</span>
+                    <div class="radio">
+                        <input id="radio-1" type="radio" name="radio" value="1" checked>
+                        <label for="radio-1">Мужской</label>
+                    </div>
+                    <div class="radio">
+                        <input id="radio-2" type="radio" name="radio" value="2">
+                        <label for="radio-2">Женский</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="country">Страна</label>
+                    <select name="country" id="country">
+                        <option>Выберите страну проживания</option>
+                        <option value="1">Россия</option>
+                        <option value="2">Украина</option>
+                        <option value="3">Беларусь</option>
+                    </select>
+                    <div class="select-arrow"></div>
+                </div>
+                <div class="checkbox">
+                    <label>Какие фильмы вы любите смотреть?</label>
+                    <div>
+                        <input type=checkbox name="fantastic" id="fantastic" value="1">
+                        <label for="fantastic">Фантастика</label>
+                    </div>
+                    <div>
+                        <input type=checkbox name="action" id="action" value="2">
+                        <label for="action">Боевики</label>
+                    </div>
+                    <div>
+                        <input type=checkbox name="adventure" id="adventure" value="3">
+                        <label for="adventure">Приключенчения</label>
+                    </div>
+                    <div>
+                        <input type=checkbox name="melodrama" id="melodrama" value="4">
+                        <label for="melodrama">Мелодрамы</label>
+                    </div>
+                    <div>
+                        <input type=checkbox name="documentary" id="documentary" value="5">
+                        <label for="documentary">Документальные</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="actorPer">Из этих персонажей вам больше нравится:</label>
+                    <select name="actorPer" size="4" multiple="multiple" id="actorPer">
+                        <option value="gorez">Гордый Горец
+                        <option value="rambo">Недоделанный Рембо
+                        <option value="cowboy">Ковбой В Шляпе
+                        <option value="crybobby">Слезливый Бобби
+                        <option value="history">Историческая личность
+                        <option value="other">Другой
+                    </select>
+                </div>
+                <div>
+                    <label for="messageField">Какими актерами вы вдохновляетесь</label>
+                    <textarea name="messageField" id="messageField" cols="50" rows="10" placeholder="Введите здесь своё сообщение..."></textarea>
+                </div>
+                <button type="submit">Отправить</button>
+            </form>
         </div>
-        <div>
-            <label for="country">Страна</label>
-            <select name="country">
-                <option>Выберите страну проживания</option>
-                <option value="Россия">Россия</option>
-                <option value="Украина">Украина</option>
-                <option value="Беларусь">Беларусь</option>
-            </select>
-            <div class="select-arrow"></div>
-        </div>
-        <div>
-            <label for="film">Какие фильмы вы любите смотреть?</label>
-                <input type=checkbox name="fiction" value="yes"> Фантастику<br>
-                <input type=checkbox name="thriller" value="yes"> Боевики<br>
-                <input type=checkbox name="adventure" value="yes" checked> Приключенческие<br>
-                <input type=checkbox name="melodrama" value="yes"> Мелодрамы<br>
-                <input type=checkbox name="documentary" value="yes"> Документальные
-        </div>
-        <div>
-            <label for="actorPer">Из этих персонажей вам больше нравится:</label>
-            <select name="actorPer" size="4" multiple="multiple">
-                <option value="gorez">Гордый Горец
-                <option value="rembo">Недоделанный Рембо
-                <option value="cowboy">Ковбой В Шляпе
-                <option value="crybobby">Слезливый Бобби
-                <option value="history">Историческая личность
-                <option value="other">Другой
-            </select>
-        </div>
-        <div>
-            <label for="messageField">Какими актерами вы вдохновляетесь</label>
-            <textarea name="message" id="messageField" cols="50" rows="10">Введите здесь своё сообщение...</textarea>
-        </div>
-        <button type="submit">Отправить</button>
-    </form>
-</div>
-</body>
+    </body>
 </html>
